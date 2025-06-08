@@ -1,100 +1,123 @@
 [![765shots-so.png](https://i.postimg.cc/3xFymQ8D/765shots-so.png)](https://postimg.cc/68T5xSG9)
 
-# Corona
+# DINNANCE
 
-A simple lifestyle brand website with a focus on "living as a sensory experience." Built with basic HTML, CSS, and JavaScript - perfect for beginners learning web development.
+A simple crypto and finance website that makes investing easy for everyone. Built with basic HTML, CSS, and JavaScript - perfect for beginners.
+
+## What It Does
+
+- Shows crypto investment opportunities
+- Free ($0/month) online real estate advisor
+- Educational content about investing
+- Company information and projects
+- Newsletter and merchandise sections
 
 ## What's Inside
 
 - **HTML**: Basic website structure
-- **CSS**: Simple styling and layouts
-- **JavaScript**: Basic interactions (no fancy stuff!)
-
-## Features
-
-- Home page with brand messaging
-- Products section
-- Shop merchandise area
-- About us page
-- Newsletter subscription
-- Mobile-friendly design
-- "#THISISLIVING" campaign section
+- **CSS**: Simple styling
+- **JavaScript**: Basic interactions
+- No servers needed!
 
 ## File Structure
 
 ```
-corona/
+dinnance/
 ├── index.html          # Main page
-├── style.css          # All the styling
+├── style.css          # All styling
 ├── script.js          # Simple JavaScript
-└── images/            # Your photos
+├── about.html         # About us page
+├── merch.html         # Merchandise page
+├── newspaper.html     # Newsletter page
+└── images/            # Logo and photos
 ```
 
-## How to Use
+## How to Start
 
-1. **Download the code**
+1. **Get the code**
    ```
-   Download from: https://github.com/pabloWIB/Corona.git
+   Download from: https://github.com/pabloWIB/DINNANCE.git
    ```
 
-2. **Open the website**
-   - Double-click `index.html` to open in your browser
-   - That's it! No servers needed.
+2. **Open it**
+   - Double-click `index.html`
+   - Opens in your web browser
+   - No installation needed!
 
-3. **Make changes**
-   - Edit `index.html` for content
-   - Change colors/fonts in `style.css`
-   - Add simple effects in `script.js`
+3. **Make it yours**
+   - Change text in HTML files
+   - Update colors in `style.css`
+   - Add your own content
 
-## Customization
+## Easy Changes
 
-**Change the text:**
-- Replace "Lorem ipsum" with your real content
-- Update brand name from "Corona" to yours
-- Modify the "#THISISLIVING" hashtag
+**Replace placeholder text:**
+- Change "Lorem ipsum" to real content
+- Update investment information
+- Add real crypto courses and advice
 
-**Change colors:**
+**Update branding:**
 ```css
-/* In style.css, find and change: */
-background-color: #your-color;
-color: #your-text-color;
+/* In style.css */
+.logo { color: #your-brand-color; }
+.main-color { background: #your-color; }
 ```
 
-**Add your images:**
-- Put your photos in the `images/` folder
-- Update image names in `index.html`
+**Add your content:**
+- Replace investment advice with your expertise
+- Update "Top Week" section with real data
+- Add actual crypto information
 
-## Where to Host (Free)
+## Quick Customization
 
-- **GitHub Pages**: Upload to GitHub, turn on Pages
-- **Netlify**: Drag and drop your folder
-- **Vercel**: Connect your GitHub account
+**Navigation Menu:**
+- About Us → Your company info
+- Merch → Your products
+- Newspaper → Your blog/news
+- Download → Your app/resources
+
+**Main Sections:**
+- Investment advisor content
+- Crypto market information
+- Goal-setting tools
+- Support and help sections
+
+## Free Hosting Options
+
+- **Netlify**: Drag your folder and drop
+- **GitHub Pages**: Upload and activate
+- **Vercel**: Connect and deploy
 
 ## Beginner Tips
 
-- Start small - change one thing at a time
-- Use browser "Inspect Element" to test changes
-- Save your work often
-- Don't worry about making it perfect
+- Start with small text changes
+- Test in browser after each change
+- Keep backups of working versions
+- Don't edit everything at once
 
-## What You Can Add Later
+## What to Add Later
 
-- Contact form (using Formspree)
-- Photo gallery
-- Social media links
-- Simple animations
-- Google Analytics
+- Real crypto price feeds
+- Investment calculator
+- Contact forms
+- User testimonials
+- Blog posts about investing
 
-## Need Help?
+## Learning Resources
 
-- W3Schools (great for HTML/CSS basics)
-- MDN Web Docs (when you're ready for more)
-- YouTube tutorials for specific features
+- HTML/CSS basics: W3Schools
+- JavaScript: MDN Web Docs
+- Crypto content: Research real information
+- Design ideas: Look at other finance sites
 
-## Copyright
+## Important Note
 
-© PABLO - Feel free to use this as a learning template!
+If you're building a real finance website:
+- Add proper legal disclaimers
+- Include risk warnings for investments
+- Make sure all advice is accurate
+- Consider regulatory requirements
 
 ---
 
-*Keep it simple and keep building!*
+*Start simple, learn as you go, and build something awesome!*
