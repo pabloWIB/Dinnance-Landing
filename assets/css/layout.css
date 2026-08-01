@@ -1,0 +1,258 @@
+/* ==========================================================================
+   DINNANCE — layout.css
+   Containers, header, sections, hero, stage and footer.
+   Mobile first: every media query uses min-width.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Page frame, container and sections
+   -------------------------------------------------------------------------- */
+
+/* Keeps the footer at the bottom of short pages (sign in, 404). */
+main {
+  flex: 1 0 auto;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--space-3);
+}
+
+.section {
+  padding-block: var(--space-6);
+}
+
+.section--alt {
+  background-color: var(--color-surface-alt);
+}
+
+.section__header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+/* --------------------------------------------------------------------------
+   2. Site header
+   -------------------------------------------------------------------------- */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background-color: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.site-header__inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+  min-height: var(--header-height);
+  padding-block: var(--space-1);
+}
+
+.site-nav {
+  margin-left: auto;
+}
+
+.site-nav ul {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+/* --------------------------------------------------------------------------
+   3. Hero
+   -------------------------------------------------------------------------- */
+
+.hero {
+  padding-block: var(--space-6) var(--space-6);
+}
+
+.hero__grid {
+  display: grid;
+  gap: var(--space-5);
+  align-items: center;
+}
+
+.hero__content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-3);
+}
+
+.hero__lead {
+  color: var(--color-ink-muted);
+  font-size: var(--text-lg);
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-top: var(--space-2);
+}
+
+.hero__media {
+  margin: 0;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+}
+
+.hero__media img {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+}
+
+/* --------------------------------------------------------------------------
+   4. Feature block
+   -------------------------------------------------------------------------- */
+
+.feature__grid {
+  display: grid;
+  gap: var(--space-5);
+  align-items: center;
+}
+
+.feature__content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-3);
+}
+
+.feature__media {
+  margin: 0;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+.feature__media img {
+  width: 100%;
+  aspect-ratio: 20 / 13;
+  object-fit: cover;
+}
+
+/* --------------------------------------------------------------------------
+   5. Stage — single centred panel (sign in, 404)
+   -------------------------------------------------------------------------- */
+
+.stage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-block: var(--space-6);
+  background-color: var(--color-surface-alt);
+}
+
+.stage .container {
+  display: flex;
+  justify-content: center;
+}
+
+/* --------------------------------------------------------------------------
+   6. Footer
+   -------------------------------------------------------------------------- */
+
+.site-footer {
+  padding-block: var(--space-5);
+  background-color: var(--color-brand);
+  color: var(--color-on-brand);
+}
+
+.site-footer__inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.site-footer__nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1) var(--space-4);
+}
+
+.site-footer__nav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
+  color: var(--color-on-brand);
+}
+
+.site-footer__nav a:hover {
+  color: var(--color-on-brand);
+}
+
+.site-footer__note {
+  max-width: 48ch;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: var(--text-sm);
+}
+
+.site-footer :focus-visible {
+  outline-color: var(--color-on-brand);
+}
+
+/* --------------------------------------------------------------------------
+   7. Media queries
+   -------------------------------------------------------------------------- */
+
+@media (min-width: 480px) {
+  .container {
+    padding-inline: var(--space-4);
+  }
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding-block: var(--space-7);
+  }
+
+  .hero {
+    padding-block: var(--space-7);
+  }
+
+  .site-nav ul {
+    gap: var(--space-3);
+  }
+
+  .site-footer__inner {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: var(--space-6);
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero__grid,
+  .feature__grid {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-6);
+  }
+
+  /* On wide screens the photograph sits on the left of the copy.
+     Source order keeps the heading first for screen readers. */
+  .feature__media {
+    order: -1;
+  }
+}
+
+@media (min-width: 1440px) {
+  .section {
+    padding-block: var(--space-8);
+  }
+
+  .hero {
+    padding-block: var(--space-8);
+  }
+}

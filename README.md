@@ -1,123 +1,114 @@
-[![765shots-so.png](https://i.postimg.cc/3xFymQ8D/765shots-so.png)](https://postimg.cc/68T5xSG9)
+# Dinnance
 
-# DINNANCE
+Static two-page site for Dinnance, a fictional online real estate advisor: a landing page and a sign-in screen. No build step, no dependencies, no framework.
 
-A simple crypto and finance website that makes investing easy for everyone. Built with basic HTML, CSS, and JavaScript - perfect for beginners.
+[![Live demo](https://img.shields.io/badge/demo-dinnance.wib.digital-2ea44f)](https://dinnance.wib.digital)
+[![Hire me on Fiverr](https://img.shields.io/badge/Hire%20me%20on-Fiverr-1DBF73?style=for-the-badge&logo=fiverr&logoColor=white)](https://www.fiverr.com/pablonietop)
+![Dependencies](https://img.shields.io/badge/dependencies-0-brightgreen)
+![Build step](https://img.shields.io/badge/build%20step-none-lightgrey)
 
-## What It Does
+## Description
 
-- Shows crypto investment opportunities
-- Free ($0/month) online real estate advisor
-- Educational content about investing
-- Company information and projects
-- Newsletter and merchandise sections
+Dinnance leads with a single claim — a real estate advisor that costs $0 a month — and gets to it before anything else. The landing page carries the claim, a short investing pitch, and one call to action that repeats in both blocks. The second page is the sign-in screen behind that call to action.
 
-## What's Inside
+The site is hand-written HTML and CSS. It ships three stylesheets plus a generated one for the web font, and a single JavaScript file that only the sign-in page loads. Everything else — layout, sticky footer, smooth anchors, hover and focus states — is CSS.
 
-- **HTML**: Basic website structure
-- **CSS**: Simple styling
-- **JavaScript**: Basic interactions
-- No servers needed!
+Typography is Cinzel for headings and the system UI stack for body copy, so the only font the browser downloads is the one used for display type, embedded as a data URI in `assets/css/fonts.css`.
 
-## File Structure
+**The sign-in form has no backend.** It validates in the browser and then says so, on screen. Nothing is submitted, stored, or sent anywhere.
+
+## Tech stack
+
+| Layer | Technology | Role in the project |
+|---|---|---|
+| Markup | HTML5 | Three pages: landing, sign-in, 404 |
+| Styling | CSS3 with custom properties | Tokens in `:root`, mobile-first `min-width` queries at 480/768/1024/1440 |
+| Scripting | Vanilla JavaScript (ES5 syntax, IIFE) | Sign-in form validation only; 112 lines, no globals |
+| Typography | Cinzel Variable (400–900) | Headings and brand mark, WOFF2 embedded as a data URI |
+| Images | WebP | Two photographs, both with intrinsic `width`/`height` |
+| Tooling | None | No package.json, no bundler, no transpiler |
+
+## Project structure
 
 ```
-dinnance/
-├── index.html          # Main page
-├── style.css          # All styling
-├── script.js          # Simple JavaScript
-├── about.html         # About us page
-├── merch.html         # Merchandise page
-├── newspaper.html     # Newsletter page
-└── images/            # Logo and photos
+.
+├── index.html                    # Landing: claim, investing block, footer
+├── sign-in.html                  # Sign-in screen (client-side validation only)
+├── 404.html                      # Not-found page, links back to the landing
+├── robots.txt                    # Allows everything except /404.html
+├── sitemap.xml                   # The two indexable URLs
+├── assets/
+│   ├── css/
+│   │   ├── fonts.css             # GENERATED: @font-face with the WOFF2 inlined
+│   │   ├── base.css              # Tokens, reset, base typography
+│   │   ├── layout.css            # Container, header, hero, feature, footer
+│   │   ├── components.css        # Brand, buttons, badge, panel, form fields
+│   │   └── pages/
+│   │       └── sign-in.css       # Rules only the sign-in screen needs
+│   ├── js/
+│   │   └── main.js               # Single entry point, loaded by sign-in.html
+│   ├── img/
+│   │   ├── content/
+│   │   │   ├── modern-house-entrance.webp   # Hero, 1200×800
+│   │   │   ├── city-towers-skyline.webp     # Investing block, 800×520
+│   │   │   └── og-dinnance.jpg              # Open Graph card, 1200×630
+│   │   └── logo/
+│   │       ├── favicon-32.png
+│   │       └── apple-touch-icon.png
+│   └── fonts/
+│       └── OFL.txt               # SIL Open Font License for Cinzel
+└── docs/
+    ├── auditoria.md              # Audit of the project before the rewrite
+    └── cambios.md                # Change log, grouped by phase
 ```
 
-## How to Start
+## Running it locally
 
-1. **Get the code**
-   ```
-   Download from: https://github.com/pabloWIB/DINNANCE.git
-   ```
+The site is static. Opening `index.html` from disk works — the web font is embedded, so nothing is blocked by the `file://` origin.
 
-2. **Open it**
-   - Double-click `index.html`
-   - Opens in your web browser
-   - No installation needed!
+To serve it over HTTP instead:
 
-3. **Make it yours**
-   - Change text in HTML files
-   - Update colors in `style.css`
-   - Add your own content
-
-## Easy Changes
-
-**Replace placeholder text:**
-- Change "Lorem ipsum" to real content
-- Update investment information
-- Add real crypto courses and advice
-
-**Update branding:**
-```css
-/* In style.css */
-.logo { color: #your-brand-color; }
-.main-color { background: #your-color; }
+```bash
+npx serve .
 ```
 
-**Add your content:**
-- Replace investment advice with your expertise
-- Update "Top Week" section with real data
-- Add actual crypto information
+Or, without Node:
 
-## Quick Customization
+```bash
+python -m http.server 8000
+```
 
-**Navigation Menu:**
-- About Us → Your company info
-- Merch → Your products
-- Newspaper → Your blog/news
-- Download → Your app/resources
+## Deployment
 
-**Main Sections:**
-- Investment advisor content
-- Crypto market information
-- Goal-setting tools
-- Support and help sections
+Deployed on Vercel at [dinnance.wib.digital](https://dinnance.wib.digital). Static: point the project at the repository root, no build command, no output directory, no configuration file. Vercel serves `404.html` for unknown paths automatically.
 
-## Free Hosting Options
+Canonical URLs and `sitemap.xml` use the `.html` suffix because the deployment serves `/sign-in.html` directly and returns 404 for `/sign-in`.
 
-- **Netlify**: Drag your folder and drop
-- **GitHub Pages**: Upload and activate
-- **Vercel**: Connect and deploy
+## Limitations
 
-## Beginner Tips
+- The sign-in form is a UI demo. Wiring it to a real service means adding a request in `assets/js/main.js` and replacing the message shown after a valid submit.
+- The written content is everything the project actually had: the price claim, the investing pitch, and the "Top week" label. Sections that only ever held filler text were removed rather than rewritten with invented copy.
+- The two photographs came with the original project and have no recorded source or licence. Confirm the rights before using the site commercially.
 
-- Start with small text changes
-- Test in browser after each change
-- Keep backups of working versions
-- Don't edit everything at once
+## Fonts and licensing
 
-## What to Add Later
+Cinzel is licensed under the SIL Open Font License; `assets/fonts/OFL.txt` is the licence text as distributed. `assets/css/fonts.css` is generated — to swap the font, base64-encode a WOFF2 and replace the data URI:
 
-- Real crypto price feeds
-- Investment calculator
-- Contact forms
-- User testimonials
-- Blog posts about investing
+```bash
+python -c "import base64,pathlib;print(base64.b64encode(pathlib.Path('font.woff2').read_bytes()).decode())"
+```
 
-## Learning Resources
+## Author
 
-- HTML/CSS basics: W3Schools
-- JavaScript: MDN Web Docs
-- Crypto content: Research real information
-- Design ideas: Look at other finance sites
+**Pablo Nieto Pérez** — [wib.digital](https://wib.digital)
+GitHub: [@pabloWIB](https://github.com/pabloWIB)
 
-## Important Note
+## Hire me
 
-If you're building a real finance website:
-- Add proper legal disclaimers
-- Include risk warnings for investments
-- Make sure all advice is accurate
-- Consider regulatory requirements
+I build **custom internal tools, CRMs and dashboards** for small teams, and
+**conversion-focused websites** for businesses.
 
----
-
-*Start simple, learn as you go, and build something awesome!*
+- [Custom internal tool, CRM or dashboard](https://www.fiverr.com/pablonietop/build-a-custom-internal-app-for-your-business) — from $45
+- [Conversion-focused website](https://www.fiverr.com/pablonietop/convert-your-landing-page-design-to-code) — from $80
+- [All my services on Fiverr](https://www.fiverr.com/pablonietop)
+- [wib.digital](https://wib.digital)

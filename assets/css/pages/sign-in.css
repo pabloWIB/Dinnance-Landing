@@ -1,0 +1,21 @@
+/* ==========================================================================
+   DINNANCE — pages/sign-in.css
+   Rules that only the sign-in screen needs. Loaded by sign-in.html alone.
+   ========================================================================== */
+
+.auth__legal {
+  margin-top: var(--space-4);
+  color: var(--color-ink-muted);
+  font-size: var(--text-xs);
+  text-align: center;
+}
+
+.auth__submit {
+  margin-top: var(--space-1);
+}
+
+@media (min-width: 480px) {
+  .auth .panel {
+    padding: var(--space-6) var(--space-5);
+  }
+}

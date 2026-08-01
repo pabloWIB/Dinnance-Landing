@@ -1,0 +1,22 @@
+# Dependencies (the project has none, but `npx serve` may leave a cache behind)
+node_modules/
+
+# Environment
+.env
+.env.*
+
+# Hosting
+.vercel
+
+# Logs
+*.log
+npm-debug.log*
+
+# Editors
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
